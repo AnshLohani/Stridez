@@ -2,70 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Campus Fitness Leaderboard</title>
+  <title>Stridez • Campus Fitness Leaderboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="stars"></div>
 
   <div class="container">
-    <h1>Campus Fitness Leaderboard</h1>
+    <header>
+      <h1>🏆 Stridez Leaderboard</h1>
+      <p>Real-time Steps Leaderboard</p>
+    </header>
 
-    <!-- Status Bar -->
     <div class="status-bar">
       <div id="statusDot" class="status-dot"></div>
-      <div id="statusText">Checking FastAPI...</div>
+      <div id="statusText">Checking server...</div>
     </div>
 
-    <!-- Sync Button -->
-    <div style="text-align:center;">
-      <button onclick="syncFitnessData()">🔄 Sync Fitness Data</button>
+    <div class="controls">
+      <button id="manualUpdateBtn">🔄 Update Steps Manually</button>
+      <button id="refreshBtn">🔁 Refresh Leaderboard</button>
     </div>
+
     <div id="messageContainer"></div>
 
-    <!-- Loading -->
-    <div id="loading">
+    <div id="loading" class="loading">
       <div class="spinner"></div>
       <p id="loadingText">Loading...</p>
     </div>
 
-    <!-- Summary -->
-    <div class="summary-cards">
-      <div class="card">
-        <h2 id="totalUsers">0</h2>
-        <p>Total Users</p>
-      </div>
-      <div class="card">
-        <h2 id="totalSteps">0</h2>
-        <p>Total Steps</p>
-      </div>
-      <div class="card">
-        <h2 id="totalCalories">0</h2>
-        <p>Total Calories</p>
-      </div>
-      <div class="card">
-        <h2 id="totalPoints">0</h2>
-        <p>Total Points</p>
-      </div>
+    <div class="leaderboard" id="leaderboard-list">
+      <!-- Leaderboard items will be injected here -->
     </div>
 
-    <!-- Leaderboard -->
-    <div class="leaderboard-controls">
-      Sort by:
-      <select id="sortSelect" onchange="changeSort(this.value)">
-        <option value="points">Points</option>
-        <option value="steps">Steps</option>
-        <option value="streak">Streak</option>
-      </select>
-    </div>
-    <div class="leaderboard" id="leaderboard-list">
-      <!-- Populated by JS -->
-    </div>
   </div>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>

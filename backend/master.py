@@ -3,9 +3,20 @@ from fastapi import FastAPI
 from apscheduler.schedulers.background import BackgroundScheduler
 import mysql.connector
 import scheduler  # our scheduler.py file
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # FastAPI app
 app = FastAPI()
+
+# Allow frontend to talk to backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # you can restrict later to http://localhost:5500 etc
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Database config
 db_config = {
