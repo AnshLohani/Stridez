@@ -51,3 +51,7 @@ def get_leaderboard():
 def manual_update():
     scheduler.update_steps()
     return {"message": "Steps updated manually"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}

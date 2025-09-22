@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";  // Change if backend runs elsewhere
+const API_BASE = "http://127.0.0.1:8000"; // Change if backend runs elsewhere
 
 // Utility to select DOM elements
 const el = (id) => document.getElementById(id);
@@ -32,7 +32,8 @@ async function refreshLeaderboard() {
     const data = await apiService.getLeaderboard();
     displayLeaderboard(data.leaderboard);
   } catch (err) {
-    showMessage("Failed to load leaderboard", "error");
+    console.error("Leaderboard error:", err);
+    showMessage("⚠️ Failed to load leaderboard (check DB connection)", "error");
   } finally {
     showLoading(false);
   }
@@ -45,7 +46,8 @@ async function manualUpdate() {
     showMessage(result.message || "Steps updated", "success");
     await refreshLeaderboard();
   } catch (err) {
-    showMessage("Update failed", "error");
+    console.error("Update error:", err);
+    showMessage("⚠️ Update failed", "error");
   } finally {
     showLoading(false);
   }
@@ -84,7 +86,7 @@ function displayLeaderboard(list) {
   });
 }
 
-function showMessage(msg, type="success") {
+function showMessage(msg, type = "success") {
   const mc = el("messageContainer");
   mc.innerHTML = `<div class="${type}-message message">${msg}</div>`;
   setTimeout(() => {
@@ -92,7 +94,7 @@ function showMessage(msg, type="success") {
   }, 4000);
 }
 
-function showLoading(isLoading, text="") {
+function showLoading(isLoading, text = "") {
   const ld = el("loading");
   const lt = el("loadingText");
   if (isLoading) {
@@ -108,8 +110,8 @@ window.onload = () => {
   el("manualUpdateBtn").addEventListener("click", manualUpdate);
   el("refreshBtn").addEventListener("click", refreshLeaderboard);
 
-  // Try ping backend
-  fetch(`${API_BASE}/leaderboard`)
+  // Pure server health check (does not depend on DB)
+  fetch(`${API_BASE}/health`)
     .then(resp => {
       if (resp.ok) {
         el("statusDot").classList.remove("error");
