@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Hello, {{ name }} 👋</h1>
+    {% if picture %}
+        <img src="{{ picture }}" alt="Profile Picture" width="120">
+    {% endif %}
+    <p>Today's step count: <b>{{ step_count }}</b></p>
+
+    <h3>Tokens (for testing)</h3>
+    <p>Access Token: {{ access_token }}</p>
+    <p>Refresh Token: {{ refresh_token }}</p>
+
+    <a href="/">Go back</a>
+</body>
+</html>
