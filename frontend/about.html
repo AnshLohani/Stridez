@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Campus Fitness Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: #444;
+        }
+
+        .team-section {
+            padding: 60px 0;
+        }
+
+        .team-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .team-intro h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .team-intro p {
+            color: #ccc;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .team-member:hover {
+            background: #1a1a1a;
+            transform: translateY(-5px);
+        }
+
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .member-role {
+            color: #ff6b35;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .member-bio {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>About Our Team</h1>
+            <p>Meet the passionate developers behind Campus Fitness Leaderboard</p>
+            <a href="experiment.html" class="back-link">← Back to Leaderboard</a>
+        </header>
+
+        <section class="team-section">
+            <div class="team-intro">
+                <h2>Our Mission</h2>
+                <p>We believe that fitness should be fun, competitive, and rewarding. Our team combines expertise in software development, user experience design, and fitness technology to create innovative solutions that motivate students to stay active and healthy.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">AR</div>
+                    <h3 class="member-name">Arpit</h3>
+                    <p class="member-role">Frontend Developer</p>
+                    <p class="member-bio">Specializes in creating responsive and interactive user interfaces. Passionate about modern web technologies and delivering seamless user experiences across all devices.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AP</div>
+                    <h3 class="member-name">Abhay Parashar</h3>
+                    <p class="member-role">Business Strategy</p>
+                    <p class="member-bio">Develops strategic business plans and market analysis. Focuses on identifying opportunities and creating sustainable growth strategies for the fitness platform.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">NS</div>
+                    <h3 class="member-name">Nikita Shukla</h3>
+                    <p class="member-role">Pitch and Research</p>
+                    <p class="member-bio">Conducts comprehensive market research and crafts compelling pitches. Ensures our solution addresses real user needs through data-driven insights.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AM</div>
+                    <h3 class="member-name">Anusha Mansal</h3>
+                    <p class="member-role">Pitch Lead and Presentation</p>
+                    <p class="member-bio">Leads presentation development and delivery. Expert in communicating complex technical concepts in an engaging and accessible manner.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AL</div>
+                    <h3 class="member-name">Ansh Lohani</h3>
+                    <p class="member-role">Team Leader, Backend Developer and Presentation</p>
+                    <p class="member-bio">Leads the team while building robust server-side architecture and contributing to presentations. Ensures scalable and secure backend systems while effectively communicating technical solutions.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AB</div>
+                    <h3 class="member-name">Agrim Bhardwaj</h3>
+                    <p class="member-role">Business Research</p>
+                    <p class="member-bio">Analyzes market trends and competitive landscapes. Provides valuable insights that guide product development and business decision-making processes.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
